@@ -65,6 +65,8 @@ var init = function (window) {
         physikz.updatePosition(circles[i]);
         game.checkCirclePosition(circles[i]);
       }
+
+      window.Gamification.update();
     }
 
 
@@ -117,6 +119,15 @@ var init = function (window) {
     game.circles = circles;
     game.drawCircle = drawCircle;
     game.update = update;
+
+    window.Gamification.init({
+      canvas: canvas,
+      view: view,
+      draw: draw,
+      physikz: physikz,
+      circles: circles,
+      game: game
+    });
 
 
     app.addUpdateable(window.opspark.game);
